@@ -7,5 +7,5 @@ vim.keymap.set("n", '<leader>ds', require('telescope.builtin').lsp_document_symb
 vim.keymap.set("n", '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols)
 vim.keymap.set("n", '<leader>rn', vim.lsp.buf.rename)
 vim.keymap.set("n", '<leader>ca', vim.lsp.buf.code_action)
+vim.keymap.set("n", '<leader>t', vim.lsp.buf.signature_help)
 vim.keymap.set("n", 'gD', vim.lsp.buf.declaration)
-
