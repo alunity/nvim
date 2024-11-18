@@ -28,3 +28,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+
+vim.o.wrap = true
+vim.o.linebreak = true -- breaks by word rather than character
