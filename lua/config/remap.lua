@@ -37,5 +37,5 @@ vim.keymap.set("n", "<leader>r", ':lua package.loaded["moodle"] = nil; require("
 vim.keymap.set("n", "<leader>n", ':Moodle<CR>')
 -- :lua Snacks.picker.notifications()
 
--- vim.keymap.set('n', 'j', 'gj')
--- vim.keymap.set('n', 'k', 'gk')
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
