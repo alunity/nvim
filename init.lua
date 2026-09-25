@@ -23,6 +23,7 @@ vim.opt.completeopt = { "menuone", "noinsert", "noselect" }
 vim.opt.exrc = true
 vim.g.direnv_silent_load = 1
 
+vim.keymap.set("n", "<leader>b", "<cmd>silent make | copen<CR>", {desc = "Run Build Task"})
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic float' })
 vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', { desc = 'Trigger native autocomplete' })
 vim.keymap.set('n', '<leader>x', '<cmd>source %<CR>', { desc = 'Source current file' })
@@ -68,7 +69,7 @@ vim.pack.add({
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'lua', 'python', 'javascript', 'typescript', 'rust', 'go', 'c' }, -- Add your filetypes here
+    pattern = { 'lua', 'python', 'javascript', 'typescript', 'rust', 'go', 'c' }, 
     callback = function()
         -- Enable syntax highlighting
         vim.treesitter.start()
@@ -203,3 +204,5 @@ vim.lsp.config('lua_ls', {
 })
 
 vim.lsp.enable('lua_ls')
+vim.lsp.enable('clangd')
+vim.lsp.enable('basedpyright')
