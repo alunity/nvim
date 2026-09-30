@@ -29,6 +29,22 @@ vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', { desc = 'Trigger native autocomp
 vim.keymap.set('n', '<leader>x', '<cmd>source %<CR>', { desc = 'Source current file' })
 vim.keymap.set('n', '<leader>pv', '<cmd>Oil<CR>', { desc = 'file explorer' })
 
+local zen_active = false
+vim.keymap.set('n', '<leader>z', function()
+    zen_active = not zen_active
+    if zen_active then
+        prev_status = vim.opt.laststatus:get()
+        prev_tab = vim.opt.showtabline:get()
+        vim.opt.laststatus = 0
+        vim.opt.showtabline = 0
+        vim.opt.ruler = false
+    else
+        vim.opt.laststatus = prev_status == 0 and 3 or prev_status
+        vim.opt.showtabline = prev_tab == 0 and 2 or prev_tab
+        vim.opt.ruler = true
+    end
+end, { desc = 'toggle zen' })
+
 vim.keymap.set('i', '<Tab>', function()
     if vim.fn.pumvisible() == 1 then
         return '<C-n>'
