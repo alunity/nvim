@@ -38,10 +38,14 @@ vim.keymap.set('n', '<leader>z', function()
         vim.opt.laststatus = 0
         vim.opt.showtabline = 0
         vim.opt.ruler = false
+        vim.opt.number = false
+        vim.opt.relativenumber = false
     else
         vim.opt.laststatus = prev_status == 0 and 3 or prev_status
         vim.opt.showtabline = prev_tab == 0 and 2 or prev_tab
         vim.opt.ruler = true
+        vim.opt.number = true
+        vim.opt.relativenumber = true
     end
 end, { desc = 'toggle zen' })
 
